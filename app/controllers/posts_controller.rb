@@ -1,4 +1,3 @@
-
 class PostController < ApplicationController
 
 attr_accessor :post
@@ -20,16 +19,11 @@ attr_accessor :post
 
 	end
 
-	def edit
-		@post = Post.find(params[:id])
-	end
+	private 
 
-	def destroy
-		@post = Post.find(params[:id])
-		@post.destroy
-		
-		redirect_to '/'
-	end
+	def post_params
+      params.require(:post).permit(:email, :password, :password_confirmation)
+    end
 	
 end
 # [:index, :new, :edit, :create, :destroy]
