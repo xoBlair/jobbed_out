@@ -1,0 +1,9 @@
+index.html.erb
+
+<!-- #homepage -->
+
+<%= form_for @user_info do |f| %>
+ <%= f.text_field :username, :placeholder => "Username" %>
+ <%= f.text_field :password, :placeholder => "Password" %>
+ <%= f.submit "Submit" %>
+<% end %>
